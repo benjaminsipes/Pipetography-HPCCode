@@ -2,23 +2,23 @@
 
 # # Wynton Submissions:
 #$ -S /bin/bash
-#$ -N PP_Streams
+#$ -N PP_All
 #$ -cwd
 #$ -q gpu.q
 #$ -j y
 #$ -l mem_free=64G
-#$ -l h_rt=24:00:00 #gross overestimate, probably closer to 5-10min
+#$ -l h_rt=24:00:00 #gross overestimate, probably closer to 5-10 hours
 #$ -o /wynton/protected/home/rad-brain/bsipes/outlog_general
 
 # # Radiology SCS Submissions:
-# #SBATCH --job-name=PP_Streams
+# #SBATCH --job-name=PP_All
 # #SBATCH --nodes=1
 # #SBATCH --ntasks=1
 # #SBATCH --nodelist=cronus #I've had best luck with cronus, although other nodes may work fine, too.
 # #SBATCH -N 1 --partition=gpu --ntasks-per-node=1
 # #SBATCH --gres=gpu:1
 # #SBATCH --mem=64G
-# #SBATCH --time=24:00:00 #gross overestimate, probably closer to 5-10min
+# #SBATCH --time=24:00:00 #gross overestimate, probably closer to 5-10 hours
 # #SBATCH --output=/home/%u/slurm/%x-%j.log
 
 /bin/echo Running on host: `hostname`.
