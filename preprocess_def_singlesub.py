@@ -7,8 +7,8 @@ import pipetography.pipeline as pp
 from sys import argv
 import re
 
-sub = [int(argv[1].strip())] #idx is [1] because [0] is the script name
-ses = [str(argv[2].strip())]
+sub = int(argv[1].strip()) #idx is [1] because [0] is the script name
+ses = str(argv[2].strip())
 
 def main():
 	bids_folder = os.path.abspath('..')

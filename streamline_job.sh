@@ -42,7 +42,7 @@ bids_root_dir=`pwd`/..
 # # From Wynton:
 gpustreamlines_path=/protected/data/rajlab1/shared_data/singularity/images/gpustreamlines.sif
 # # From Radiology SCS:
-# gpustreamlines_path=/data/rajlab1/shared_data/singularity/images/gpustreamlines.sif
+# gpustreamlines_path=/data/i2/software/singularity/gpustreamlines.sif
 
 
 #Make Directories for Outputs
