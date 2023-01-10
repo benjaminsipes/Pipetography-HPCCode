@@ -7,16 +7,15 @@ import pipetography.connectomes as pc
 from sys import argv
 import re
 
-sub = [int(argv[1].strip())] #idx is [1] because [0] is the script name
-ses = [str(argv[2].strip())]
+sub = int(argv[1].strip()) #idx is [1] because [0] is the script name
+ses = str(argv[2].strip())
 
 def main():
 	bids_folder = os.path.abspath('..')
 	bids_layout = bids.layout.BIDSLayout(bids_folder)
-	all_sub_list = bids_layout.get_subjects()
+	sub_list = bids_layout.get_subjects()
 	ses_list = bids_layout.get_sessions()
-	all_sub_ses_combos = set(product(all_sub_list, ses_list))
-
+	all_sub_ses_combos = set(product(sub_list, ses_list))
 
 	skip_these = []
 	for tup in all_sub_ses_combos:
@@ -26,6 +25,7 @@ def main():
 		elif int(tup[0])!=sub or str(tup[1])!=ses:
 			skip_these.append(tup)
 	
+
 	print('Subject-Session tuples to process:')
 	print(all_sub_ses_combos.difference(skip_these))
 
@@ -34,7 +34,7 @@ def main():
 		BIDS_dir = '/BIDS_dir',
 		skip_tuples = skip_these,
 		debug=False,
-		atlas_list = ['/BIDS_dir/code/Pipetography_Atlases/desikanKilliany86MNI.nii.gz','/BC_BIDS/code/Pipetography_Atlases/BN_Atlas_246_1mm.nii.gz','/BC_BIDS/code/Pipetography_Atlases/aal116MNI.nii.gz']
+		atlas_list = ['/BIDS_dir/code/Pipetography_Atlases/desikanKilliany86MNI.nii.gz','/BIDS_dir/code/Pipetography_Atlases/BN_Atlas_246_1mm.nii.gz','/BIDS_dir/code/Pipetography_Atlases/aal116MNI.nii.gz']
 		)
     # connectomes.subject_template
 	connectomes.create_nodes()

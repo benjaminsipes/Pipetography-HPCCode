@@ -37,16 +37,18 @@ THRESHOLD=0.1
 STEP_SIZE=0.5
 SEED_DENS=1
 
-bids_root_dir=`pwd`/..
+bids_root_dir=/wynton/protected/home/rad-brain/bsipes/datasets/BIDS_dir
+# bids_root_dir=`pwd`/..
 
 # # From Wynton:
-gpustreamlines_path=/protected/data/rajlab1/shared_data/singularity/images/gpustreamlines.sif
+gpustreamlines_path=/wynton/protected/home/rad-brain/bsipes/singularity/gpustreamlines.sif
+# gpustreamlines_path=/protected/data/rajlab1/shared_data/singularity/images/gpustreamlines.sif
 # # From Radiology SCS:
 # gpustreamlines_path=/data/i2/software/singularity/gpustreamlines.sif
 
 
 #Make Directories for Outputs
-mkdir $bids_root_dir/derivatives/pipetography/sub-$1/ses-$2/tracktography
+mkdir -p $bids_root_dir/derivatives/pipetography/sub-$1/ses-$2/tracktography
 mkdir -p $bids_root_dir/derivatives/streamlines/sub-$1/ses-$2
 
 # Inputs:
