@@ -31,13 +31,13 @@ pipetography_path=/protected/data/rajlab1/shared_data/singularity/images/pipetog
 # pipetography_path=/data/i2/software/singularity/pipetography_latest.sif
 
 # Singularity container call:
-echo "Initiating singularity pipetography preprocesing job for sub-{$1} ses-{$2}..."
+echo "Initiating singularity pipetography preprocesing job for sub-${1} ses-${2}..."
 
 singularity exec -e -B $bids_root_dir:/BIDS_dir --pwd $PWD $pipetography_path python /BIDS_dir/code/preprocess_def_singlesub.py $1 $2
 
 date
-echo "Preprocessing Job script for sub-{$1} ses-{$2} complete."
-#Approximate Run Time per subject = 50 minutes
+echo "Preprocessing Job script for sub-${1} ses-${2} complete."
+#Approximate Run Time per subject = 1-2 hours
 
 # # Job Summary Wynton:
 qstat -j $JOB_ID
