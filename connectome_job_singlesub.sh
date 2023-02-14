@@ -31,12 +31,12 @@ pipetography_path=/protected/data/rajlab1/shared_data/singularity/images/pipetog
 # pipetography_path=/data/i2/software/singularity/pipetography_latest.sif
 
 # Singularity container call:
-echo "Initiating singularity pipetography connectome job for sub-{$1} ses-{$2}..."
+echo "Initiating singularity pipetography connectome job for sub-${1} ses-${2}..."
 
 singularity exec -e -B $bids_root_dir:/BIDS_dir --pwd $PWD $pipetography_path python /BIDS_dir/code/connectome_def_singlesub.py $1 $2
 
 date
-echo "Connectome Job script for sub-{$1} complete."
+echo "Connectome Job script for sub-${1} complete."
 #Approximate Run Time per subject = 50 minutes
 
 # # Job Summary Wynton:
