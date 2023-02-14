@@ -1,0 +1,17 @@
+{
+    "Name": "Test BIDS dataset",
+    "BIDSVersion": "1.2.1",
+    "License": "",
+    "Authors": [
+        "Benjamin Sipes"
+    ],
+    "Acknowledgments": "For testing pipetography",
+    "HowToAcknowledge": "",
+    "Funding": [
+        ""
+    ],
+    "ReferencesAndLinks": [
+        ""
+    ],
+    "DatasetDOI": ""
+}
